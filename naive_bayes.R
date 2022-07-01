@@ -24,10 +24,10 @@ dfmt
 toks
 
 # get training set
-dfmat_training = dfmt[1:20,]
+dfmat_training = dfmt[1:110,]
 
 # get test set (documents not in id_train)
-dfmat_test = dfmt[21:nrow(dfmt),]
+dfmat_test = dfmt[111:nrow(dfmt),]
 
 dfmat_test
 

@@ -24,10 +24,10 @@ dfmt
 toks
 
 # get training set
-dfmat_training = dfmt[1:110,]
+dfmat_training = dfmt[1:150,]
 
 # get test set (documents not in id_train)
-dfmat_test = dfmt[111:nrow(dfmt),]
+dfmat_test = dfmt[151:nrow(dfmt),]
 
 dfmat_test
 
@@ -44,3 +44,4 @@ tab_class = table(actual_class, predicted_class)
 tab_class
 
 confusionMatrix(tab_class, mode = "everything")
+

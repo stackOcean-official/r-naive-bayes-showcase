@@ -5,7 +5,7 @@ require(quanteda.textmodels)
 require(caret)
 library(readr)
 
-data = read.csv("data/labelled_data.csv")
+data = read.csv("data/labelled_data.csv", sep=";")
 
 
 set.seed(73)

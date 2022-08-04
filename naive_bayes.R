@@ -5,7 +5,8 @@ require(quanteda.textmodels)
 require(caret)
 library(readr)
 
-data = read.csv("data/labelled_data.csv", sep=";")
+#data = read.csv("data/labelled_data.csv", sep=";")
+data = read.csv("data/aws_dataset_de_train_subset.csv", sep=";")
 
 
 set.seed(73)
@@ -24,12 +25,13 @@ dfmt
 toks
 
 # get training set
-dfmat_training = dfmt[1:150,]
+dfmat_training = dfmt[1:140,]
 
 # get test set (documents not in id_train)
-dfmat_test = dfmt[151:nrow(dfmt),]
+dfmat_test = dfmt[141:210,]
 
 dfmat_test
+table(data$topic)
 
 # train classifier 
 model_nb = textmodel_nb(dfmat_training, dfmat_training$topic)

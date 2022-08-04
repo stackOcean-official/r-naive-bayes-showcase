@@ -1,0 +1,1 @@
+-Das automatisierte Klassifizieren von E-Mails und direkte versenden an die Person, die der beste Ansprechpartner für das Thema der Mail ist. Eingehende Rechnungen könnten von einer KI als solche erkannt werden und automatisiert an die Buchhaltung weitergeleitet werden. 

@@ -1,13 +1,10 @@
-#joni: setwd("~/Documents/dev/business/bonito")
 
 require(quanteda)
 require(quanteda.textmodels)
 require(caret)
 library(readr)
 
-#data = read.csv("data/labelled_data.csv", sep=";")
 data = read.csv("data/aws_dataset_de_train_subset.csv", sep=";")
-
 
 set.seed(73)
 
@@ -15,35 +12,20 @@ set.seed(73)
 names(data)[names(data) == "review_body"] = "text"
 corpus_resending = corpus(data)
 
-
 # tokenize texts
 toks = tokens(corpus_resending, remove_punct = TRUE, remove_number = TRUE) %>% 
   tokens_remove(pattern = stopwords("de")) %>% 
   tokens_wordstem()
 dfmt = dfm(toks)
-dfmt
-toks
-
+ 
 # get training set
-dfmat_training = dfmt[1:140,]
-
-# get test set (documents not in id_train)
-dfmat_test = dfmt[141:210,]
-
-dfmat_test
-table(data$topic)
+dfmat_training = dfmt
 
 # train classifier 
 model_nb = textmodel_nb(dfmat_training, dfmat_training$topic)
-summary(model_nb)
 
-# check result accuracy
-dfmat_matched = dfm_match(dfmat_test, features = featnames(dfmat_training))
+# save model
+saveRDS(model_nb, "model/model.rds")
+write.csv(featnames(dfmat_training),"./data/featurenames.csv", row.names = FALSE)
 
-actual_class = dfmat_matched$topic
-predicted_class = predict(model_nb, newdata = dfmat_matched)
-tab_class = table(actual_class, predicted_class)
-tab_class
-
-confusionMatrix(tab_class, mode = "everything")
 

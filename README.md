@@ -1,6 +1,6 @@
-# r-shiny-docker-sample
+# kisu-bonito
 
-Sample Deployment of a R Machine-Learning Model using Docker
+Deployment of a R Naive Bayes classifier using Docker
 
 ## How to run
 
@@ -15,7 +15,7 @@ Rscript src/train.R
 ### How to build
 
 ```
-docker build -t r-shiny-docker-sample .
+docker build -t kisu-bonito .
 ```
 
 ### How to run
@@ -23,7 +23,7 @@ docker build -t r-shiny-docker-sample .
 Use this command to run the dockerfile in the background
 
 ```
-docker run --rm -p 8000:8000 --name r-shiny r-shiny-docker-sample
+docker run --rm -p 8000:8000 --name r-shiny kisu-bonito
 ```
 
 To stop the server, use this command

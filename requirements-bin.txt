@@ -1,0 +1,4 @@
+r-cran-shiny
+r-cran-shinythemes
+r-cran-dplyr
+r-cran-readr

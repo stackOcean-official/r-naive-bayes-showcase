@@ -1,3 +1,0 @@
-Automatisiertes Erfassen von Retourengründen 
-
-Eine KI ist in der Lage die Retourengründe automatisiert aus Texten zu erfassen und zu speichern. Dadurch kann auch genau analysiert werden bei welchen Produkten möglicherweise bestimmte Retourengründe häufiger vorkommen.

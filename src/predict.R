@@ -1,4 +1,3 @@
-# TODO set working directory
 
 # Load packages
 library(shiny)
@@ -31,7 +30,7 @@ ui <- fluidPage(theme = shinytheme("lumen"),
                   
                   # Output: Prediction which topic the comment is mostlikely related to.
                   mainPanel(
-                    textOutput(outputId = "predict"),
+                    h2(textOutput(outputId = "predict")),
                     tags$a(href = "https://stackocean.com", "provided by stackOcean", target = "_blank")
                   )
                 )

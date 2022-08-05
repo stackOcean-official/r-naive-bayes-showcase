@@ -27,5 +27,3 @@ model_nb = textmodel_nb(dfmat_training, dfmat_training$topic)
 # save model
 saveRDS(model_nb, "model/model.rds")
 write.csv(featnames(dfmat_training),"./data/featurenames.csv", row.names = FALSE)
-
-

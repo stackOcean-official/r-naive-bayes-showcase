@@ -5,6 +5,9 @@ library(shiny)
 library(shinythemes)
 library(dplyr)
 library(readr)
+library(quanteda)
+library(quanteda.textmodels)
+
 
 
 # set port for shiny server

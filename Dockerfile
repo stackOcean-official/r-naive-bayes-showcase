@@ -28,6 +28,7 @@ RUN rm -rf /var/lib/apt/lists/*
 
 ADD model model
 ADD src src
+ADD data data
 
 EXPOSE 8000
 

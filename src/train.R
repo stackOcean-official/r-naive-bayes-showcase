@@ -1,7 +1,7 @@
 
-require(quanteda)
-require(quanteda.textmodels)
-require(caret)
+library(quanteda)
+library(quanteda.textmodels)
+library(caret)
 library(readr)
 
 data = read.csv("data/aws_dataset_de_train_subset.csv", sep=";")

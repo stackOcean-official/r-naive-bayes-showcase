@@ -45,7 +45,8 @@ server <- function(input, output) {
     dfmat_test = dfm(toks_test)
     dfmat_matched = dfm_match(dfmat_test, features = unlist(train_features))
     trend_text = predict(model_nb, newdata = dfmat_matched, type = "probability")
-    paste(trend_text)
+    #paste(100*(round(trend_text, digits = 4)))
+    paste("Ergebniss:", colnames(trend_text)[apply(trend_text,1,which.max)], "|", "Zuversicht:", 100*(round(max(trend_text), digits = 4)),"%.")
   })
 }
 

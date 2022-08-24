@@ -1,7 +1,7 @@
 FROM ubuntu:jammy
 
-ENV LC_ALL de_DE.UTF-8
-ENV LANG de_DE.UTF-8
+ENV LC_ALL C.UTF-8
+ENV LANG C.UTF-8
 
 ## This was not needed before but we need it now
 ENV DEBIAN_FRONTEND noninteractive

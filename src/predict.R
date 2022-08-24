@@ -13,9 +13,16 @@ library(quanteda.textmodels)
 options(shiny.port = 8000)
 options(shiny.host = "0.0.0.0")
 
+# set correct encoding - not necessary if correct docker env language is set
+fix.encoding <- function(df, originalEncoding = "UTF-8") {
+  numCols <- ncol(df)
+  for (col in 1:numCols) Encoding(df[, col]) <- originalEncoding
+  return(df)
+}
+
 # Load model and data
-model_nb = readRDS("model/model.rds")
-train_features = read.csv("./data/featurenames.csv")
+model_nb = readRDS("./model/model.rds")
+train_features = fix.encoding(read.csv("./data/featurenames.csv"))
 
 
 # Define UI

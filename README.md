@@ -6,7 +6,7 @@ Running and deploying a Naive Bayes classifier for text data using R and Docker
 
 ### If you just want to run the model locally, run the "predict.R" script in an editor like RStudio. 
 
-But before you run the script, run the following commands within R Studio to install the packages:
+But, before you run the script, run the following commands within R Studio to install the required packages:
 ```
 install.packages("quanteda")
 install.packages("quanteda.textmodels")
@@ -84,4 +84,14 @@ docker logs r-shiny
 
 ### Run the model with your custom data in RStudio: 
 
+If you have not done when running the script with example data,run the following commands within R Studio to install the required packages:
+```
+install.packages("quanteda")
+install.packages("quanteda.textmodels")
+install.packages("caret")
+install.packages("readr")
+```
+
 Make sure your custom data is in the right format. Then run the script "train.R" which will retrain the model and save it in the model folder. 
+
+Then run the script "predict.R". 

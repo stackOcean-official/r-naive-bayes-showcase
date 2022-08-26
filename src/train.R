@@ -4,14 +4,14 @@ library(caret)
 library(readr)
 
 
-# TODO: change to your filename
+# TODO: If using custom data change to your filename
 data = read.csv("data/aws_dataset_de_train_subset.csv", sep=",")
 
 # build corpus object 
 corpus_resending = corpus(data)
 
 # tokenize texts
-# TODO: Change "de" to the language of your training data
+# TODO: If using custom data change "de" to the language of your training data
 toks = tokens(corpus_resending, remove_punct = TRUE, remove_number = TRUE) %>% 
   tokens_remove(pattern = stopwords("de")) %>% 
   tokens_wordstem()

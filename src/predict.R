@@ -9,6 +9,7 @@ library(quanteda.textmodels)
 
 
 # set port for shiny server
+# TODO: If your port 8000 is currently in use, change to another port
 options(shiny.port = 8000)
 options(shiny.host = "0.0.0.0")
 
@@ -52,9 +53,7 @@ server <- function(input, output) {
       tokens_wordstem()
     dfmat_test = dfm(toks_test)
     dfmat_matched = dfm_match(dfmat_test, features = unlist(train_features))
-    trend_text = predict(model_nb, newdata = dfmat_matched, type = "probability")
-    #paste(100*(round(trend_text, digits = 4)))
-    paste("Ergebniss:", colnames(trend_text)[apply(trend_text,1,which.max)], "|", "Zuversicht:", 100*(round(max(trend_text), digits = 4)),"%.")
+    trend_text = predict(model_nb, newdata = dfmat_matched, type = "probability")    paste("Ergebniss:", colnames(trend_text)[apply(trend_text,1,which.max)], "|", "Zuversicht:", 100*(round(max(trend_text), digits = 4)),"%.")
   })
 }
 

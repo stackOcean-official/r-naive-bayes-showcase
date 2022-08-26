@@ -16,6 +16,8 @@ install.packages("readr")
 
 ### If you would like to run model in docker: 
 
+#### Make sure that a current version of docker is installed on your machine. 
+
 How to build
 
 ```

@@ -5,7 +5,7 @@ library(readr)
 
 
 # TODO: change to your filename
-data = read.csv("data/aws_dataset_de_train_subset.csv", sep=";")
+data = read.csv("data/aws_dataset_de_train_subset.csv", sep=",")
 
 # build corpus object 
 corpus_resending = corpus(data)

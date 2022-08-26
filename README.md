@@ -4,7 +4,7 @@ Running and deploying a Naive Bayes classifier for text data using R and Docker
 
 ## run using example data:
 
-If you just want to run the model locally, run the "predict.R" script in an editor like RStudio. 
+### If you just want to run the model locally, run the "predict.R" script in an editor like RStudio. 
 
 But before you run the script, run the following commands within R Studio to install the packages:
 ```
@@ -14,15 +14,15 @@ install.packages("caret")
 install.packages("readr")
 ```
 
-If you would like to run model in docker: 
+### If you would like to run model in docker: 
 
-### How to build
+How to build
 
 ```
 docker build -t kisu-bonito .
 ```
 
-### How to run
+How to run
 
 Use this command to run the dockerfile in the background
 

@@ -1,4 +1,3 @@
-
 # Load packages
 library(shiny)
 library(shinythemes)
@@ -27,7 +26,8 @@ train_features = fix.encoding(read.csv("./data/featurenames.csv"))
 
 # Define UI
 ui <- fluidPage(theme = shinytheme("lumen"),
-                titlePanel("Kommtarauswertung und Retourengründe"),
+                titlePanel("Beispielprodukt: Schuhe - mögliche Kategorien: Lieferung, Passform, Qualität"),
+                h3("Kommentarauswertung und Retourengründe"),
                 sidebarLayout(
                   sidebarPanel(
                     

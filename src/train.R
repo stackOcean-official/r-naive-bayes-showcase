@@ -1,25 +1,30 @@
-
 library(quanteda)
 library(quanteda.textmodels)
 library(caret)
 library(readr)
 
+# readme: set local working directory in RStudio
+# TODO: change to your filename
 data = read.csv("data/aws_dataset_de_train_subset.csv", sep=";")
 
 set.seed(73)
 
-# rename column so that we have a text number 
+# rename column to be able to build corpus object [remove from script and 
+# perform one time and include it in dataset. Also remove "shoe" column.]
 names(data)[names(data) == "review_body"] = "text"
+
+# build corpus object 
 corpus_resending = corpus(data)
 
 # tokenize texts
+# readme: If working with another language change "de" to language of choice (link for everyone to check)
+# TODO: Change "de" to the language of your training data
 toks = tokens(corpus_resending, remove_punct = TRUE, remove_number = TRUE) %>% 
   tokens_remove(pattern = stopwords("de")) %>% 
   tokens_wordstem()
-dfmt = dfm(toks)
  
-# get training set
-dfmat_training = dfmt
+# get training set in dfm format 
+dfmat_training = dfm(toks)
 
 # train classifier 
 model_nb = textmodel_nb(dfmat_training, dfmat_training$topic)

@@ -1,4 +1,4 @@
-# kisu-bonito
+# r-naive-bayes-showcase
 
 Running and deploying a Naive Bayes classifier for text data using R and Docker. You can use this NLP classifier to understand natural language sentences and assign a label to them.
 There is no built-in way in R to do this task, so we created a classifier for it ourselves.
